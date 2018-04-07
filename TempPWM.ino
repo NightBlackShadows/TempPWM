@@ -30,17 +30,17 @@ void loop()                     // run over and over again
  temperature = (temperature - .5) * 100;          //converting from 10 mv per degree wit 500 mV offset
                                                   //to degrees ((volatge - 500mV) times 100)
 
- topSpeed = 100 + ((temperature-15)*20);
+ topSpeed = 100 + ((temperature-15)*10);
                                                   
  // Serial output for debugging
  Serial.print("Top: "); Serial.println(topSpeed);
+ Serial.print("Temp: "); Serial.println(temperature);                     //printing the result
  Serial.println();
 
  // Write the changes to the PWM pins
  analogWrite(top_a, topSpeed);
  analogWrite(top_b, topSpeed);
                                                   
- Serial.println(temperature);                     //printing the result
  delay(1000);                                     //waiting a second
 }
 
